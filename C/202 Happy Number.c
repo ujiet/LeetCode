@@ -35,9 +35,13 @@
  * So, after multiple times of operation, if encounter 1 then return true, if encounter 4 return false.
  *  
  * P.S. Without using exhaustion, we can use Floyd cycle detection instead.
- *  e.g. slow = fast = n;
- *       slow = sum_of_square(slow);
- *       fast = sum_of_square(sum_of_square(fast));   ...etc.
+ * e.g. slow = fast = n;
+ *      do {
+ *          slow = sum_of_square(slow);
+ *          fast = sum_of_square(sum_of_square(fast));
+ *      } while (slow != fast);
+ *      if (slow == 1) return true;
+ *      else return false; 
  */
 
 int sum_of_square(int n) {
