@@ -33,6 +33,11 @@
  * 2. n is not a Happy Number: n get into a cycle contains 4 after multiple times of sum_of_square(n).
  * and the two condtions are mutual exclusive.
  * So, after multiple times of operation, if encounter 1 then return true, if encounter 4 return false.
+ *  
+ * P.S. Without using exhaustion, we can use Floyd cycle detection instead.
+ *  e.g. slow = fast = n;
+ *       slow = sum_of_square(slow);
+ *       fast = sum_of_square(sum_of_square(fast));   ...etc.
  */
 
 int sum_of_square(int n) {
